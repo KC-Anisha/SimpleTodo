@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rvItems;
     ItemsAdaptor itemsAdaptor;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,23 @@ public class MainActivity extends AppCompatActivity {
         rvItems = findViewById(R.id.rvItems);
 
         loadItems();
+
+        rvItems.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v,
+                                       int left, int top, int right, int bottom,
+                                       int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                if (bottom < oldBottom) {
+                    rvItems.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            rvItems.scrollToPosition(
+                                    rvItems.getAdapter().getItemCount() - 1);
+                        }
+                    }, 100);
+                }
+            }
+        });
 
         ItemsAdaptor.OnLongClickListener onLongClickListener = new ItemsAdaptor.OnLongClickListener(){
             @Override

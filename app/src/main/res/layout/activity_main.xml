@@ -8,9 +8,12 @@
 
     <Button
         android:id="@+id/btnAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="81dp"
+        android:layout_height="39dp"
+        android:background="@drawable/custom_button"
         android:text="Add"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.978"
@@ -34,11 +37,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvItems"
-        android:layout_width="322dp"
-        android:layout_height="537dp"
+        android:layout_width="345dp"
+        android:layout_height="581dp"
         app:layout_constraintBottom_toTopOf="@+id/etItem"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.472" />
+        app:layout_constraintVertical_bias="0.483" />
 </androidx.constraintlayout.widget.ConstraintLayout>
