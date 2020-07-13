@@ -32,7 +32,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I had trouble working with the RecyclerView and implementing the editing feature. After looking more into it, I was able to overcome both of these obstacles.
 
 ## License
 
