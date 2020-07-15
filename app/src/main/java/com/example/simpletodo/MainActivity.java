@@ -48,23 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
         loadItems();
 
-        rvItems.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
-            @Override
-            public void onLayoutChange(View v,
-                                       int left, int top, int right, int bottom,
-                                       int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                if (bottom < oldBottom) {
-                    rvItems.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            rvItems.scrollToPosition(
-                                    rvItems.getAdapter().getItemCount() - 1);
-                        }
-                    }, 100);
-                }
-            }
-        });
-
         ItemsAdaptor.OnLongClickListener onLongClickListener = new ItemsAdaptor.OnLongClickListener(){
             @Override
             public void onItemLongClicked(int position) {
